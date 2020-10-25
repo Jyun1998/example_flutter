@@ -1,0 +1,40 @@
+{
+    "project_info": {
+      "project_number": "860597117782",
+      "firebase_url": "https://leave-pass-management-system.firebaseio.com",
+      "project_id": "leave-pass-management-system",
+      "storage_bucket": "leave-pass-management-system.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:860597117782:android:892992e15ce85676276cf7",
+          "android_client_info": {
+            "package_name": "com.example.lpms"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "860597117782-thv55lgq09fl8iov4ta2qb7a31vqmqn4.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSyANqOuvQIQr0-k18k7MithcaLOG1RH_Gz0"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": [
+              {
+                "client_id": "860597117782-thv55lgq09fl8iov4ta2qb7a31vqmqn4.apps.googleusercontent.com",
+                "client_type": 3
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }
