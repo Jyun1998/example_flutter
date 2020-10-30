@@ -2,8 +2,8 @@ import 'dart:async';
 //import 'dart:convert';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_firebase_auth_example/models/user.dart';
-import 'package:flutter_firebase_auth_example/models/settings.dart';
+import 'package:lpms/services/user.dart';
+import 'package:lpms/services/settings.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -19,7 +19,7 @@ class Auth {
   static void addUserSettingsDB(User user) async {
     checkUserExist(user.userId).then((value) {
       if (!value) {
-        print("user ${user.firstName} ${user.email} added");
+        print("user ${user.kName} ${user.email} added");
         Firestore.instance
             .document("users/${user.userId}")
             .setData(user.toJson());
@@ -27,7 +27,7 @@ class Auth {
           settingsId: user.userId,
         ));
       } else {
-        print("user ${user.firstName} ${user.email} exists");
+        print("user ${user.kName} ${user.email} exists");
       }
     });
   }

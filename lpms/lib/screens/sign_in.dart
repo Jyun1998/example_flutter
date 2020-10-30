@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/services.dart';
 
-import 'package:flutter_firebase_auth_example/util/state_widget.dart';
-import 'package:flutter_firebase_auth_example/util/auth.dart';
-import 'package:flutter_firebase_auth_example/util/validator.dart';
-import 'package:flutter_firebase_auth_example/ui/widgets/loading.dart';
+import 'package:lpms/services/state_widget.dart';
+import 'package:lpms/services/auth.dart';
+import 'package:lpms/services/validator.dart';
+import 'package:lpms/services/loading.dart';
 
 class SignInScreen extends StatefulWidget {
   _SignInScreenState createState() => _SignInScreenState();
@@ -31,7 +31,7 @@ class _SignInScreenState extends State<SignInScreen> {
           radius: 60.0,
           child: ClipOval(
             child: Image.asset(
-              'assets/images/default.png',
+              'assets/mnd.jpg',
               fit: BoxFit.cover,
               width: 120.0,
               height: 120.0,

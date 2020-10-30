@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase_auth_example/models/state.dart';
-import 'package:flutter_firebase_auth_example/util/state_widget.dart';
-import 'package:flutter_firebase_auth_example/ui/screens/sign_in.dart';
-import 'package:flutter_firebase_auth_example/ui/widgets/loading.dart';
+import 'package:lpms/services/state.dart';
+import 'package:lpms/services/state_widget.dart';
+import 'package:lpms/services/loading.dart';
 
 class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
@@ -22,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
         (appState.firebaseUserAuth == null ||
             appState.user == null ||
             appState.settings == null)) {
-      return SignInScreen();
+      Navigator.pushNamed(context, '/sign-in');
     } else {
       if (appState.isLoading) {
         _loadingVisible = true;
@@ -36,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
             radius: 60.0,
             child: ClipOval(
               child: Image.asset(
-                'assets/images/default.png',
+                'assets/mnd.jpg',
                 fit: BoxFit.cover,
                 width: 120.0,
                 height: 120.0,
@@ -69,35 +68,35 @@ class _HomeScreenState extends State<HomeScreen> {
         },
       );
 
-      final signUpLabel = FlatButton(
+      final webView1Label = FlatButton(
         child: Text(
-          'Sign Up',
+          'webview1',
           style: TextStyle(color: Colors.black54),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, '/signup');
+          Navigator.pushNamed(context, '/webview1');
         },
       );
 
-      final signInLabel = FlatButton(
+      final webView2Label = FlatButton(
         child: Text(
-          'Sign In',
+          'webview2',
           style: TextStyle(color: Colors.black54),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, '/signin');
+          Navigator.pushNamed(context, '/webview2');
         },
       );
 //check for null https://stackoverflow.com/questions/49775261/check-null-in-ternary-operation
       final userId = appState?.firebaseUserAuth?.uid ?? '';
       final email = appState?.firebaseUserAuth?.email ?? '';
-      final firstName = appState?.user?.firstName ?? '';
-      final lastName = appState?.user?.lastName ?? '';
+      final kName = appState?.user?.kName ?? '';
+      final serialNo = appState?.user?.serialNo ?? '';
       final settingsId = appState?.settings?.settingsId ?? '';
       final userIdLabel = Text('App Id: ');
-      final emailLabel = Text('Email: ');
-      final firstNameLabel = Text('First Name: ');
-      final lastNameLabel = Text('Last Name: ');
+      final emailLabel = Text('이메일: ');
+      final kNameLabel = Text('이름: ');
+      final serialNoLabel = Text('군번: ');
       final settingsIdLabel = Text('SetttingsId: ');
 
       return Scaffold(
@@ -121,12 +120,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text(email,
                           style: TextStyle(fontWeight: FontWeight.bold)),
                       SizedBox(height: 12.0),
-                      firstNameLabel,
-                      Text(firstName,
+                      kNameLabel,
+                      Text(kName,
                           style: TextStyle(fontWeight: FontWeight.bold)),
                       SizedBox(height: 12.0),
-                      lastNameLabel,
-                      Text(lastName,
+                      serialNoLabel,
+                      Text(serialNo,
                           style: TextStyle(fontWeight: FontWeight.bold)),
                       SizedBox(height: 12.0),
                       settingsIdLabel,
@@ -134,8 +133,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: TextStyle(fontWeight: FontWeight.bold)),
                       SizedBox(height: 12.0),
                       signOutButton,
-                      signInLabel,
-                      signUpLabel,
+                      webView1Label,
+                      webView2Label,
                       forgotLabel
                     ],
                   ),

@@ -2,10 +2,10 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_firebase_auth_example/models/state.dart';
-import 'package:flutter_firebase_auth_example/models/user.dart';
-import 'package:flutter_firebase_auth_example/models/settings.dart';
-import 'package:flutter_firebase_auth_example/util/auth.dart';
+import 'package:lpms/services/state.dart';
+import 'package:lpms/services/user.dart';
+import 'package:lpms/services/settings.dart';
+import 'package:lpms/services/auth.dart';
 
 class StateWidget extends StatefulWidget {
   final StateModel state;
